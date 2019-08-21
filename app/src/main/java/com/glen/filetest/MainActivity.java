@@ -5,16 +5,17 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import com.glen.filetest.adapter.DocListAdapter;
+import com.glen.filetest.view.IMainView;
 
 import java.io.File;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMainView {
 
     private File root;
     private ArrayList<File> fileList = new ArrayList<File>();
@@ -40,18 +41,7 @@ public class MainActivity extends AppCompatActivity {
         rvPDFList.setItemAnimator(new DefaultItemAnimator());
         rvPDFList.setAdapter(docListAdapter);
 
-       /* for (int i = 0; i < fileList.size(); i++) {
-            TextView textView = new TextView(this);
-            textView.setText(fileList.get(i).getName());
-            textView.setPadding(5, 5, 5, 5);
 
-            System.out.println(fileList.get(i).getName());
-
-            if (fileList.get(i).isDirectory()) {
-                textView.setTextColor(Color.parseColor("#FF0000"));
-            git init}
-            llView.addView(textView);
-        }*/
 
     }
 
