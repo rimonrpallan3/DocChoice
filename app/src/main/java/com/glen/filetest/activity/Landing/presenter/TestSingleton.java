@@ -1,4 +1,4 @@
-package com.glen.filetest.presenter;
+package com.glen.filetest.activity.Landing.presenter;
 
 public class TestSingleton {
     private static final TestSingleton ourInstance = new TestSingleton();

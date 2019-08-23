@@ -1,4 +1,4 @@
-package com.glen.filetest.adapter;
+package com.glen.filetest.activity.Landing.fragment.PDFFragment.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +14,11 @@ import com.glen.filetest.R;
 import java.io.File;
 import java.util.ArrayList;
 
-public class DocListAdapter extends RecyclerView.Adapter<DocListAdapter.ViewHolder> {
+public class PDFListAdapter extends RecyclerView.Adapter<PDFListAdapter.ViewHolder> {
 
     ArrayList<File> fileList;
 
-    public DocListAdapter(ArrayList<File> fileList) {
+    public PDFListAdapter(ArrayList<File> fileList) {
         this.fileList=fileList;
     }
 

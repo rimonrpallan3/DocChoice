@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/llView"
+
+    <FrameLayout
+        android:id="@+id/flTab"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvHeadingHeader"
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tbLanding"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:elevation="4dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardElevation="4dp"
-            app:contentPadding="5dp">
+            android:layout_gravity="top"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="PDF"/>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPDFList"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpLanding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?attr/actionBarSize">
 
-        </androidx.recyclerview.widget.RecyclerView>
+        </androidx.viewpager.widget.ViewPager>
 
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FileTest</string>
+    <string name="error_message_permission_storage">Please allow to access storage permission.</string>
+    <string name="snack_permission_denied">Then please allow to access storage permission manually.</string>
 </resources>

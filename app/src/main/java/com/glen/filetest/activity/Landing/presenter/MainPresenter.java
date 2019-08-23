@@ -1,6 +1,6 @@
-package com.glen.filetest.presenter;
+package com.glen.filetest.activity.Landing.presenter;
 
-import com.glen.filetest.view.IMainView;
+import com.glen.filetest.activity.Landing.view.IMainView;
 
 public class MainPresenter implements IMainPresenter{
 
