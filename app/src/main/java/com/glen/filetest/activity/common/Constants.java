@@ -15,14 +15,12 @@ public class Constants {
         File listFile[] = dir.listFiles();
         if (listFile != null && listFile.length > 0) {
             for (int i = 0; i < listFile.length; i++) {
-
                 if (listFile[i].isDirectory()) {
                     //fileList.add(listFile[i]);
                     getPDFfile(listFile[i]);
 
                 } else {
                     if (listFile[i].getName().endsWith(".pdf"))
-
                     {
                         fileList.add(listFile[i]);
                     }
@@ -46,7 +44,6 @@ public class Constants {
                 } else {
                     if (listFile[i].getName().endsWith(".doc")||
                             listFile[i].getName().endsWith(".docx"))
-
                     {
                         fileList.add(listFile[i]);
                     }

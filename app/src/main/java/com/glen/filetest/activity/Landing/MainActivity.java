@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements IMainView {
 
         vpLanding = (ViewPager) findViewById(R.id.vpLanding);
         tbLanding = (TabLayout) findViewById(R.id.tbLanding);
-        tbLanding.addTab(tbLanding.newTab().setIcon(R.drawable.ic_launcher_background));
-        tbLanding.addTab(tbLanding.newTab().setIcon(R.drawable.ic_launcher_foreground));
+        tbLanding.addTab(tbLanding.newTab().setIcon(R.drawable.pdf_icon));
+        tbLanding.addTab(tbLanding.newTab().setIcon(R.drawable.doc_icon));
         //tbLanding.setSelectedTabIndicatorGravity(INDICATOR_GRAVITY_TOP);
         tbLanding.setTabGravity(TabLayout.GRAVITY_FILL);
 

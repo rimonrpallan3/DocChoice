@@ -35,6 +35,7 @@ public class PDFFragment extends Fragment implements IPDFFrgView, EasyPermission
     RecyclerView rvPDFList;
     PDFListAdapter pdfListAdapter;
     private File root;
+    private File root2;
     private ArrayList<File> fileList = new ArrayList<File>();
 
     @Override
@@ -47,8 +48,10 @@ public class PDFFragment extends Fragment implements IPDFFrgView, EasyPermission
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_pdf, container, false);
         rvPDFList = rootView.findViewById(R.id.rvPDFList);
-        root = new File(Environment.getExternalStorageDirectory()
-                .getAbsolutePath());
+        root = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
+        System.out.println("loadPDFFiles fileList Path : "+Environment.getExternalStorageDirectory().getAbsolutePath());
+        System.out.println("loadPDFFiles fileList Path : "+Environment.getExternalStorageState());
+        root2 = new File(Environment.getExternalStorageState());
         loadPDFFiles();
         return rootView;
     }
@@ -60,7 +63,13 @@ public class PDFFragment extends Fragment implements IPDFFrgView, EasyPermission
             // Have permission, do the thing!
             //Snackbar.make(findViewById(android.R.id.content), getResources().getString(R.string.snack_error_network_available), Snackbar.LENGTH_SHORT).show();
             //root = new File(Environment.getExternalStorageState());
-            fileList = Constants.getDOCfile(root);
+            fileList = Constants.getPDFfile(root);
+            System.out.println("loadPDFFiles fileList Size : "+fileList.size());
+            if(fileList.size()==0){
+                fileList = Constants.getPDFfile(root2);
+                System.out.println("loadPDFFiles fileList 2 Size : "+fileList.size());
+            }
+
             Gson gson = new Gson();
             String jsonString = gson.toJson(fileList);
             System.out.println("loadPDFFiles jsonString : "+jsonString);
@@ -92,7 +101,7 @@ public class PDFFragment extends Fragment implements IPDFFrgView, EasyPermission
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
         root = new File(Environment.getExternalStorageDirectory()
                 .getAbsolutePath());
-        fileList = Constants.getDOCfile(root);
+        fileList = Constants.getPDFfile(root);
         pdfListAdapter = new PDFListAdapter(fileList);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         rvPDFList.setLayoutManager(mLayoutManager);
