@@ -2,14 +2,10 @@ package com.glen.filetest.activity.Landing;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
@@ -17,9 +13,6 @@ import com.glen.filetest.R;
 import com.glen.filetest.activity.Landing.adapter.TabViewPagerAdapter;
 import com.glen.filetest.activity.Landing.view.IMainView;
 import com.google.android.material.tabs.TabLayout;
-
-import java.io.File;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements IMainView {
 
